@@ -5,10 +5,11 @@ session_start();
 
 echo 'Сессия началась!' . '</br >';
 
-$_SESSION['count'] = isset($_SESSION['count']) ? ++$_SESSION['count'] : 0;
+$_SESSION['count'] = isset($_SESSION['count']) ? ++$_SESSION['count'] : 1;
 
 if ($_SESSION['count'] === 3) {
-    header("Location: http://localhost:8000/redirect-session-page.php");
+    header("Location: /redirect-session-page.php");
+    exit;
 }
 
 echo 'Количество открытий страницы: ' . $_SESSION['count'];
